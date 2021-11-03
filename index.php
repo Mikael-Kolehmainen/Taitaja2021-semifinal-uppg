@@ -54,6 +54,18 @@
             <span class="dot" onclick="currentSlide(4)"></span>
         </div>
         </section>
-        <footer></footer>
+        <footer>
+            <div id="rest">
+                <img src="media/logo.jpg" alt="Company logo" style="padding-top: 20px"></img>
+                <h3>Mustapää Auto Oy</h3>
+                <p>Kirkkopuistikko 20</p>
+                <p>65100 Vaasa</p>
+                <p>Puh. 040 1234567</p>
+                <p style="padding-bottom: 5px">info@mustapaa-auto.fi</p>
+            </div>
+            <aside>
+                <h3>Löydä meidät</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.3714078292367!2d21.60626091650187!3d63.09614948313138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467d605ceb03eadb%3A0x414e478949cc1230!2sKirkkopuistikko%2020%2C%2065100%20Vaasa!5e0!3m2!1sen!2sfi!4v1635956848113!5m2!1sen!2sfi" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>            </aside>
+        </footer>
     </body>
 </html>
