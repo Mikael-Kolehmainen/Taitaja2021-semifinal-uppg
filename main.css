@@ -71,7 +71,9 @@ nav .active {
 
 /* Slideshow */
 
-
+#slide1 {
+    display: block
+}
 * {box-sizing:border-box}
 
 /* Slideshow container */

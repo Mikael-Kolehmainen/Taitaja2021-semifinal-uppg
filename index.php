@@ -16,7 +16,7 @@
         <section>
         <div class="slideshow-container">
             <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
+            <div class="mySlides fade" id="slide1">
                 <div class="numbertext">1 / 4</div>
                 <img src="media/rengas-1.png" style="width:100%; height:100%">
                 <div class="text"><a href="">Sesonkimainos</a></div>
@@ -57,11 +57,11 @@
         <footer>
             <div id="rest">
                 <img src="media/logo.jpg" alt="Company logo" style="padding-top: 20px"></img>
-                <h3>Mustapää Auto Oy</h3>
+                <h3>Mustapään Auto Oy</h3>
                 <p>Kirkkopuistikko 20</p>
                 <p>65100 Vaasa</p>
                 <p>Puh. 040 1234567</p>
-                <p style="padding-bottom: 5px">info@mustapaa-auto.fi</p>
+                <p style="padding-bottom: 5px">info@mustapaan-auto.fi</p>
             </div>
             <aside>
                 <h3>Löydä meidät</h3>
