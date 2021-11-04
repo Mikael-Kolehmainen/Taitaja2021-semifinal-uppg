@@ -68,7 +68,7 @@ nav {
     text-align: center;
     background-color: #0C1B33;
     color: white;
-    height: 58px;
+    height: fit-content;
 }
 nav ul {
     list-style: none;

@@ -11,7 +11,8 @@
         </header>
         <nav>
             <ul>
-                <a href="index.php" class="active"><li class="active">KOTI</li></a>
+                <a href="#video"><li>RENKAIDEN VAIHTO</li></a>
+                <a href="#valikoima"><li>RENGAS VALIKOIMA</li></a>
             </ul>
         </nav>
         <section>
@@ -54,9 +55,12 @@
                 <span class="dot" onclick="currentSlide(4)"></span>
             </div>
             <br>
-            <article>
+            <article id="video">
                 <h1>Miten vaihdat renkaat</h1>
                 <iframe src="https://www.youtube.com/embed/WWIVmcXL-Is" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </article>
+            <article id="valikoima">
+                <h1>Rengas valikoima</h1>
             </article>
         </section>
         <footer>
