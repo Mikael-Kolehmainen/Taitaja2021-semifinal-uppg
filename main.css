@@ -8,10 +8,31 @@ section {
     margin-right: auto;
     margin-left: auto;
     max-width: 1250px;
+    background-color: white;
+}
+article {
+    color: #214A8C;
+    padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: #0C1B33 solid 10px;
+}
+article h1 {
+    font-size: 40px;
+}
+article iframe {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 500px;
 }
 aside {
     margin-right: auto;
     margin-left: 50%;
+}
+aside iframe {
+    padding-bottom: 20px;
 }
 #rest {
     float: left;
@@ -26,7 +47,7 @@ header {
 footer {
     background-color: #0C1B33;
     color: white;
-    height: 360px;
+    height: fit-content;
 }
 footer h3, p {
     margin-top: 0;
@@ -37,8 +58,10 @@ footer h3 {
     padding-top: 20px;
 }
 footer p, aside iframe {
-    padding-left: 10px;
     padding-top: 5px;
+}
+footer p {
+    padding-left: 10px;
 }
 nav {
     width: 100%;
@@ -67,7 +90,27 @@ nav a:hover, li:hover {
 nav .active {
     background-color: #214A8C;
 }
-
+@media (max-width: 850px) {
+    #rest {
+      float: none;
+    }
+    aside, #rest {
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
+      text-align: center;
+    }
+    aside {
+      width: 70%;
+    }
+    aside iframe {
+      display: block;
+      width: 100%;
+    }
+    article h1 {
+      font-size: 30px;
+    }
+}
 
 /* Slideshow */
 
