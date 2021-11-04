@@ -110,6 +110,9 @@ nav .active {
     article h1 {
       font-size: 30px;
     }
+    article iframe {
+      height: 250px;
+    }
 }
 
 /* Slideshow */
