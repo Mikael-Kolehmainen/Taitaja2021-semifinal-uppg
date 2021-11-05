@@ -61,6 +61,63 @@
             </article>
             <article id="valikoima">
                 <h1>Rengas valikoima</h1>
+                <table border="1">
+                    <tr>
+                        <td>Kuva</td>
+                        <td>Merkki</td>
+                        <td>Koko</td>
+                        <td>Hinta</td>
+                        <td>Kesä- vai talvirenkaat</td>
+                    </tr>
+                    <?php
+                        $servername = "localhost";
+                        $username = "root";
+                        $password = "";
+                        $dbname = "rengastietokanta";
+
+                        // Create connection
+                        $conn = mysqli_connect($servername, $username, $password, $dbname);
+                        // Check connection
+                        if (!$conn) {
+                            die("Connection failed: " . mysqli_connect_error());
+                        }
+                        $sql = "SELECT kuva, merkki, koko, hinta, tyyppi FROM renkaat";
+                        $result = mysqli_query($conn, $sql);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo "<tr>";
+                                for($i = 1; $i <= 5; $i++) {
+                                    echo "<td>";
+                                    switch($i) {
+                                        case 1:
+                                            $image = $row['kuva'];
+                                            echo "<img src='$image'>";
+                                            break;
+                                        case 2:
+                                            echo $row["merkki"];
+                                            break;
+                                        case 3:
+                                            echo $row["koko"];
+                                            break;
+                                        case 4:
+                                            echo $row["hinta"]." €";
+                                            break;
+                                        case 5:
+                                            echo $row["tyyppi"];
+                                            break;
+                                    }
+                                    echo "</td>";
+                                }
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "0 results";
+                        }
+
+                        mysqli_close($conn);
+                    ?>
+                </table>
             </article>
         </section>
         <footer>

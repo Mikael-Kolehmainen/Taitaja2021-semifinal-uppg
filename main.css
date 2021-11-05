@@ -90,6 +90,9 @@ nav a:hover, li:hover {
 nav .active {
     background-color: #214A8C;
 }
+#valikoima table {
+    width: 100%;
+}
 @media (max-width: 850px) {
     #rest {
       float: none;
