@@ -129,8 +129,19 @@ input[type=button] {
     width: 20px;
     text-align: center;
 }
+#cart, #searchsize {
+    width: fit-content;
+    text-align: center;
+}
 #qty {
     display: inline-block;
+}
+#sorting, #searchsize {
+    float: right;
+    font-size: 14px;
+}
+#searchsize {
+    margin-right: 10px;
 }
 @media (max-width: 850px) {
     #rest {

@@ -63,6 +63,15 @@
             </article>
             <article id="valikoima">
                 <h1>Rengas valikoima</h1>
+                <select id="sorting">
+                    <option value="0">Lajittele: Koko, pienin ensin</option>
+                    <option value="1">Lajittele: Koko, suurin ensin</option>
+                    <option value="2">Lajittele: Edullisin ensin</option>
+                    <option value="3">Lajittele: Kallein hinta ensin</option>
+                    <option value="4">Lajittele: A - Ö</option>
+                    <option value="5">Lajittele: Ö - A</option>
+                </select>
+                <input id="searchsize" type="button" value="Valitse rengaskoko" onclick="">
                 <table>
                     <?php
                         $servername = "localhost";
@@ -107,6 +116,7 @@
                                             echo "<input type=button value='+' onclick='button2()' />";
                                             echo "<div id='price'>".$row["hinta"]." €/kpl"."</div><br>";
                                             echo "<div id='total'>Yhteensä: </div>";
+                                            echo "<input id='cart' type=button value='Lisää ostoskoriin' onclick=/>";
                                             echo "</ul>";
                                             break;
                                     }
