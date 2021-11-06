@@ -63,14 +63,7 @@
             </article>
             <article id="valikoima">
                 <h1>Rengas valikoima</h1>
-                <table border="1">
-                    <tr>
-                        <td>Kuva</td>
-                        <td>Merkki</td>
-                        <td>Koko</td>
-                        <td>Hinta</td>
-                        <td>Kesä- vai talvirenkaat</td>
-                    </tr>
+                <table>
                     <?php
                         $servername = "localhost";
                         $username = "root";
@@ -87,9 +80,13 @@
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
+                            $x = 2;
                             while($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
-                                for($i = 1; $i <= 5; $i++) {
+                                if ($x % 2 == 0) {
+                                    echo "<tr>";
+                                }
+                                $x += 1;
+                                for($i = 1; $i <= 2; $i++) {
                                     echo "<td>";
                                     switch($i) {
                                         case 1:
@@ -97,21 +94,27 @@
                                             echo "<img src='$image'>";
                                             break;
                                         case 2:
-                                            echo $row["merkki"];
-                                            break;
-                                        case 3:
-                                            echo $row["koko"];
-                                            break;
-                                        case 4:
-                                            echo $row["hinta"]." €";
-                                            break;
-                                        case 5:
-                                            echo $row["tyyppi"];
+                                            echo "<div id='product'>".$row["merkki"]."</div>";
+                                            echo "<ul id='desc'>";
+                                                echo "<li>".$row["koko"]."</li>";
+                                                if ($row["tyyppi"] == 0) {
+                                                    echo "<li>Kesärengas</li>";
+                                                } else {
+                                                    echo "<li>Nastarengas</li>";
+                                                }
+                                            echo "<input type=button value='-' onclick='button1()' />";
+                                            echo "<div id='qty'></div>";
+                                            echo "<input type=button value='+' onclick='button2()' />";
+                                            echo "<div id='price'>".$row["hinta"]." €/kpl"."</div><br>";
+                                            echo "<div id='total'>Yhteensä: </div>";
+                                            echo "</ul>";
                                             break;
                                     }
                                     echo "</td>";
                                 }
-                                echo "</tr>";
+                                if ($x % 2 == 0) {
+                                    echo "</tr>";
+                                }
                             }
                         } else {
                             echo "0 results";
@@ -150,5 +153,6 @@
                 }
             }
         </script>
+        <script src="shopping-cart.js"></script>
     </body>
 </html>
