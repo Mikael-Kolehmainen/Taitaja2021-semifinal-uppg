@@ -3,16 +3,18 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="main.css" rel="stylesheet" type="text/css">
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
         <script src="slideshow.js"></script>
     </head>
     <body>
         <header>
             <img src="media/logo.jpg" alt="Company logo"></img>
         </header>
-        <nav>
+        <nav id="navbar">
             <ul>
                 <a href="#video"><li>RENKAIDEN VAIHTO</li></a>
                 <a href="#valikoima"><li>RENGAS VALIKOIMA</li></a>
+                <li style="float: right;"><i class="fas fa-shopping-cart fa-lg"></i></li>
             </ul>
         </nav>
         <section>
@@ -134,5 +136,19 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1805.3714078292367!2d21.60626091650187!3d63.09614948313138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x467d605ceb03eadb%3A0x414e478949cc1230!2sKirkkopuistikko%2020%2C%2065100%20Vaasa!5e0!3m2!1sen!2sfi!4v1635956848113!5m2!1sen!2sfi" width="80%" height="350px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </aside>
         </footer>
+        <script>
+            window.onscroll = function() {myFunction()};
+
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+
+            function myFunction() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add("sticky")
+                } else {
+                    navbar.classList.remove("sticky");
+                }
+            }
+        </script>
     </body>
 </html>
