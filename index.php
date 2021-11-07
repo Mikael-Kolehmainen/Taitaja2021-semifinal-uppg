@@ -112,11 +112,7 @@
                                                 } else {
                                                     echo "<li>Nastarengas</li>";
                                                 }
-                                            echo "<input type=button value='-' onclick='button1()' />";
-                                            echo "<div id='qty'></div>";
-                                            echo "<input type=button value='+' onclick='button2()' />";
                                             echo "<div id='price'>".$row["hinta"]." €/kpl"."</div><br>";
-                                            echo "<div id='total'>Yhteensä: </div>";
                                             echo "<input id='cart' type=button value='Lisää ostoskoriin' onclick=/>";
                                             echo "</ul>";
                                             break;
