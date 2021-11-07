@@ -6,6 +6,7 @@
         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
         <script src="slideshow.js" async></script>
         <script src="sticky.js" async></script>
+        <script src="shopping-cart-dropdown.js" async></script>
     </head>
     <body>
         <header>
@@ -15,7 +16,23 @@
             <ul>
                 <a href="#video"><li>RENKAIDEN VAIHTO</li></a>
                 <a href="#valikoima"><li>RENGAS VALIKOIMA</li></a>
-                <li style="float: right;"><i class="fas fa-shopping-cart fa-lg"></i></li>
+                <div class="shopping-cart" style="float: right;">
+                    <a onclick="dropdownfunction()" class="dropbtn fas fa-shopping-cart fa-lg"></a>
+                    <div id="mydropdown" class="shopping-cart-content">
+                        <div class="cart-row">
+                            <span class="cart-item cart-header cart-column">TUOTE</span>
+                            <span class="cart-price cart-header cart-column">HINTA</span>
+                            <span class="cart-quantity cart-header cart-column">MÄÄRÄ</span>
+                        </div>
+                        <div class="cart-items">
+                        </div>
+                        <div class="cart-total">
+                            <strong class="cart-total-title">Yhteensä</strong>
+                            <span class="cart-total-price">0€</span>
+                        </div>
+                        <button class="btn btn-primary btn-purchase" type="button">OSTA</button>
+                    </div>
+                </div>  
             </ul>
         </nav>
         <section>

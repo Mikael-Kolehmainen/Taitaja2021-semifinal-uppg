@@ -81,10 +81,16 @@ nav ul {
     padding: 0px;
     margin: 0;
 }
-nav li {
+nav li, .dropbtn, .shopping-cart {
     display: inline-block;
     padding: 20px;
     height: 100%;
+}
+.shopping-cart {
+    height: 59px;
+}
+.dropbtn, .shopping-cart {
+    padding: 0px;
 }
 nav a {
     text-decoration: none;
@@ -270,4 +276,85 @@ input[type=button] {
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+/* Shopping Cart */
+
+
+/* Dropdown Button */
+.dropbtn {
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+/* The container <div> - needed to position the dropdown content */
+.shopping-cart {
+  position: absolute;
+  right: 0;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.shopping-cart-content {
+  display: none;
+  position: relative;
+  margin-right: 5px;
+  background-color: #f1f1f1;
+  min-width: 500px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.shopping-cart-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.shopping-cart-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+.cart-column {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid black;
+  margin-right: 1.5em;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.cart-row {
+  display: flex;
+}
+
+.cart-item {
+  width: 45%;
+}
+
+.cart-price, .cart-item, .cart-quantity {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  width: 20%;
+  font-size: 1.2em;
+  color: #333;
+  width: 30%;
+}
+.cart-total-title, .cart-total-price {
+  color: #333;
+  margin-left: .5em;
+  font-size: 1.2em;
+}
+
+.cart-item-image {
+  width: 75px;
+  height: auto;
+  border-radius: 10px;
 }
