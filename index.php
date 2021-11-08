@@ -21,10 +21,21 @@
                     <div id="mydropdown" class="shopping-cart-content">
                         <div class="cart-row">
                             <span class="cart-item cart-header cart-column">TUOTE</span>
-                            <span class="cart-price cart-header cart-column">HINTA</span>
                             <span class="cart-quantity cart-header cart-column">MÄÄRÄ</span>
+                            <span class="cart-price cart-header cart-column">HINTA</span>
                         </div>
                         <div class="cart-items">
+                            <div class="cart-row">
+                                <div class="cart-item cart-column">
+                                    <img class="cart-item-image" src="media/db-images/michelin_x_ice_north_4.jpeg" width="100" height="100">
+                                    <span class="cart-item-title">MICHELIN X-ICE NORTH 4</span>
+                                </div>
+                                <div class="cart-quantity cart-column">
+                                    <input class="cart-quantity-input" type="number" value="1">
+                                    <button class="btn btn-danger" type="button">POISTA</button>
+                                </div>
+                                <span class="cart-price cart-column">217.5€</span>
+                            </div>
                         </div>
                         <div class="cart-total">
                             <strong class="cart-total-title">Yhteensä</strong>
@@ -35,7 +46,7 @@
                 </div>  
             </ul>
         </nav>
-        <section>
+        <section id="home-page-section">
             <div class="slideshow-container">
                 <!-- Full-width images with number and caption text -->
                 <div class="mySlides fade" id="slide1">

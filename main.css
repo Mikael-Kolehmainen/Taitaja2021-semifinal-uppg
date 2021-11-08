@@ -302,7 +302,7 @@ input[type=button] {
   position: relative;
   margin-right: 5px;
   background-color: #f1f1f1;
-  min-width: 500px;
+  min-width: fit-content;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -329,32 +329,40 @@ input[type=button] {
   padding-bottom: 10px;
   margin-top: 10px;
 }
-
 .cart-row {
-  display: flex;
+    display: flex;
 }
-
+.cart-header {
+    display: block;
+}
 .cart-item {
-  width: 45%;
+    width: 45%;
 }
-
 .cart-price, .cart-item, .cart-quantity {
-  margin-right: auto;
-  margin-left: auto;
-  display: block;
-  width: 20%;
-  font-size: 1.2em;
-  color: #333;
-  width: 30%;
+    width: 20%;
+    font-size: 1.2em;
+    color: #333;
+    width: 50%;
 }
-.cart-total-title, .cart-total-price {
-  color: #333;
-  margin-left: .5em;
-  font-size: 1.2em;
+.cart-price {
+    width: 10%;
 }
-
+.cart-quantity {
+    width: 20%;
+}
+.cart-total-title, .cart-total-price, .cart-item-title {
+    color: #333;
+    margin-left: 0.5em;
+    font-size: 1.2em;
+}
+.cart-item-title {
+    font-size: 0.8em;
+}
 .cart-item-image {
-  width: 75px;
-  height: auto;
-  border-radius: 10px;
+    width: 75px;
+    height: auto;
+    border-radius: 10px;
+}
+.cart-quantity-input {
+    width: 100%;
 }
