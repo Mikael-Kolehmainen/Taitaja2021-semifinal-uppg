@@ -3,6 +3,8 @@ toggle between hiding and showing the dropdown content */
 console.log("Test");
 function dropdownfunction() {
     document.getElementById("mydropdown").classList.toggle("show");
+    var shoppingcart = document.getElementById("shopping-cart-btn");
+    shoppingcart.style.margin = '0 0 0 90%';
 }
   
   // Close the dropdown menu if the user clicks outside of it
@@ -14,6 +16,7 @@ window.onclick = function(event) {
             var openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
                 openDropdown.classList.remove('show');
+                shoppingcart.style.margin = '0 0 0 0';
             }
         }
     }  

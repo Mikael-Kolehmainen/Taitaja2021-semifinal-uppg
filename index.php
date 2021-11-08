@@ -17,7 +17,7 @@
                 <a href="#video"><li>RENKAIDEN VAIHTO</li></a>
                 <a href="#valikoima"><li>RENGAS VALIKOIMA</li></a>
                 <div class="shopping-cart" style="float: right;">
-                    <a onclick="dropdownfunction()" class="dropbtn fas fa-shopping-cart fa-lg"></a>
+                    <a onclick="dropdownfunction()" class="dropbtn fas fa-shopping-cart fa-lg" id="shopping-cart-btn"></a>
                     <div id="mydropdown" class="shopping-cart-content">
                         <div class="cart-row">
                             <span class="cart-item cart-header cart-column">TUOTE</span>
