@@ -1,23 +1,25 @@
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-console.log("Test");
 function dropdownfunction() {
     document.getElementById("mydropdown").classList.toggle("show");
-    var shoppingcart = document.getElementById("shopping-cart-btn");
-    shoppingcart.style.margin = '0 0 0 90%';
+    document.getElementById("shopping-cart-btn").style.margin = '0 0 0 90%';
+    if (document.getElementById("mydropdown").classList.contains('show') == false) {
+        document.getElementById("shopping-cart-btn").style.removeProperty("margin");
+    }
 }
   
   // Close the dropdown menu if the user clicks outside of it
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn') && event.target.matches('.shopping-cart')) {
+        console.log("Test");
         var dropdowns = document.getElementsByClassName("shopping-cart-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
             var openDropdown = dropdowns[i];
             if (openDropdown.classList.contains('show')) {
+                document.getElementById("shopping-cart-btn").style.removeProperty("margin");
                 openDropdown.classList.remove('show');
-                shoppingcart.style.margin = '0 0 0 0';
             }
         }
-    }  
+    }
 }
