@@ -115,7 +115,7 @@ nav .active {
     min-width: 100%;
     height: 200px;
 }
-#price, #total {
+#price {
     font-family:  'Times New Roman', Times, serif;
     font-size: 16px;
     font-weight: bold;
@@ -171,6 +171,20 @@ input[type=button] {
     }
     article iframe {
       height: 250px;
+    }
+    .cart-price, .cart-item, .cart-quantity, .cart-total-title, .cart-total-price, .cart-item-title {
+      font-size: 1em;
+    }
+    #valikoima img {
+      min-width: 50%;
+      height: 100px;
+    }
+    #product {
+      font-size: 16px;
+    }
+    #sorting, #searchsize {
+      float: left;
+      margin-bottom: 5px;
     }
 }
 
@@ -300,9 +314,8 @@ input[type=button] {
 .shopping-cart-content {
   display: none;
   position: relative;
-  margin-right: 5px;
   background-color: #f1f1f1;
-  min-width: fit-content;
+  width: 100%;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -326,6 +339,7 @@ input[type=button] {
   align-items: center;
   border-bottom: 1px solid black;
   margin-right: 1.5em;
+  margin-left: 1.5em;
   padding-bottom: 10px;
   margin-top: 10px;
 }
