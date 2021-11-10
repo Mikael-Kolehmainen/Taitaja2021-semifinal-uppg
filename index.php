@@ -100,7 +100,7 @@
                     <option value="4">Lajittele: A - Ö</option>
                     <option value="5">Lajittele: Ö - A</option>
                 </select>
-                <input id="searchsize" type="button" value="Valitse rengaskoko" onclick="">
+                <button id="searchsize" onclick="">Valitse rengaskoko <i class="far fa-circle"></i></button>
                 <table>
                     <?php
                         $servername = "localhost";
@@ -118,11 +118,8 @@
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
-                            $x = 2;
                             while($row = mysqli_fetch_assoc($result)) {
-                                if ($x % 2 == 0) {
-                                    echo "<tr>";
-                                }
+                                echo "<tr>";
                                 $x += 1;
                                 for($i = 1; $i <= 2; $i++) {
                                     echo "<td>";
@@ -140,16 +137,15 @@
                                                 } else {
                                                     echo "<li>Nastarengas</li>";
                                                 }
-                                            echo "<div id='price'>".$row["hinta"]." €/kpl"."</div><br>";
-                                            echo "<input id='cart' type=button value='Lisää ostoskoriin' onclick=/>";
+                                            echo "</ul>";
+                                            echo "<div id='price'>".$row["hinta"]." €/kpl"."</div><br><br>";
+                                            echo "<button id='cart' onclick=/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
                                             echo "</ul>";
                                             break;
                                     }
                                     echo "</td>";
                                 }
-                                if ($x % 2 == 0) {
-                                    echo "</tr>";
-                                }
+                                echo "</tr>";
                             }
                         } else {
                             echo "0 results";
