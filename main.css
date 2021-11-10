@@ -213,6 +213,9 @@ input[type=button] {
       float: left;
       margin-bottom: 5px;
     }
+    .text {
+      font-size: 16px;
+    }
 }
 
 /* Slideshow */
