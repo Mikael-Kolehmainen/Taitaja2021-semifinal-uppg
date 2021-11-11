@@ -24,6 +24,13 @@ function ready() {
         var button = addToCartButtons[i]
         button.addEventListener('click', addToCartClicked)
     }
+
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+}
+
+function purchaseClicked() {
+    alert('Kiitos ostoksestasi!')
+    // Go to form page with asiakastiedot
 }
 
 function addToCartClicked(event) {
