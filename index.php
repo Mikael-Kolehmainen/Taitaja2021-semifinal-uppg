@@ -6,8 +6,8 @@
         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
         <script src="slideshow.js" async></script>
         <script src="sticky.js" async></script>
-        <script src="shopping-cart.js" async></script>
         <script src="shopping-cart-dropdown.js" async></script>
+        <script src="shopping-cart.js" async></script>
     </head>
     <body>
         <header>
@@ -26,32 +26,11 @@
                             <span class="cart-price cart-header cart-column">HINTA</span>
                         </div>
                         <div class="cart-items">
-                            <div class="cart-row">
-                                <div class="cart-item cart-column">
-                                    <img class="cart-item-image" src="media/db-images/michelin_x_ice_north_4.jpeg" width="100" height="100">
-                                    <span class="cart-item-title">MICHELIN X-ICE NORTH 4</span>
-                                </div>
-                                <div class="cart-quantity cart-column">
-                                    <input class="cart-quantity-input" type="number" value="1">
-                                    <button class="btn btn-danger" type="button">POISTA <i class="fas fa-trash"></i></button>
-                                </div>
-                                <span class="cart-price cart-column">217.5€</span>
-                            </div>
-                            <div class="cart-row">
-                                <div class="cart-item cart-column">
-                                    <img class="cart-item-image" src="media/db-images/michelin_x_ice_north_4.jpeg" width="100" height="100">
-                                    <span class="cart-item-title">MICHELIN X-ICE NORTH 4</span>
-                                </div>
-                                <div class="cart-quantity cart-column">
-                                    <input class="cart-quantity-input" type="number" value="1">
-                                    <button class="btn btn-danger" type="button">POISTA <i class="fas fa-trash"></i></button>
-                                </div>
-                                <span class="cart-price cart-column">217.5€</span>
-                            </div>
+                            
                         </div>
                         <div class="cart-total">
                             <strong class="cart-total-title">Yhteensä</strong>
-                            <span class="cart-total-price">435€</span>
+                            <span class="cart-total-price">0€</span>
                         </div>
                         <button class="btn btn-primary btn-purchase" type="button">OSTA</button>
                     </div>
@@ -131,16 +110,16 @@
 
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr>";
+                                echo "<tr class='shop-item'>";
                                 for($i = 1; $i <= 2; $i++) {
                                     echo "<td>";
                                     switch($i) {
                                         case 1:
                                             $image = $row['kuva'];
-                                            echo "<img src='$image'>";
+                                            echo "<img src='$image' class='shop-item-image'>";
                                             break;
                                         case 2:
-                                            echo "<div id='product'>".$row["merkki"]."</div>";
+                                            echo "<div id='product' class='shop-item-title'>".$row["merkki"]."</div>";
                                             echo "<ul id='desc'>";
                                                 echo "<li>".$row["koko"]."</li>";
                                                 if ($row["tyyppi"] == 0) {
@@ -149,8 +128,8 @@
                                                     echo "<li>Nastarengas</li>";
                                                 }
                                             echo "</ul>";
-                                            echo "<div id='price'>".$row["hinta"]." €/kpl"."</div><br><br>";
-                                            echo "<button id='cart' onclick=/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
+                                            echo "<div id='price' class='shop-item-price'>".$row["hinta"]." €/kpl"."</div><br><br>";
+                                            echo "<button id='cart' class='shop-item-button'/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
                                             echo "</ul>";
                                             break;
                                     }
