@@ -17,8 +17,8 @@
         </header>
         <nav id="navbar">
             <ul>
-                <a href="#video"><li>RENKAIDEN VAIHTO</li></a>
-                <a href="#valikoima"><li>RENGAS VALIKOIMA</li></a>
+                <a href="index.php#video"><li>RENKAIDEN VAIHTO</li></a>
+                <a href="index.php#valikoima"><li>RENGAS VALIKOIMA</li></a>
                 <div class="shopping-cart" style="float: right;">
                     <a onclick="dropdownfunction()" class="dropbtn fas fa-shopping-cart fa-lg" id="shopping-cart-btn"></a>
                     <div id="mydropdown" class="shopping-cart-content">

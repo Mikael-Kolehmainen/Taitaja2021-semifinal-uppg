@@ -29,7 +29,7 @@ function ready() {
 }
 
 function purchaseClicked() {
-    alert('Kiitos ostoksestasi!')
+    window.location.href = "form.php";
     // Go to form page with asiakastiedot
 }
 
