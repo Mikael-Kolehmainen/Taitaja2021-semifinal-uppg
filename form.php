@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="main.css" rel="stylesheet" type="text/css">
         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-        <script src="slideshow.js" async></script>
+        <script src="password-check.js" async></script>
         <script src="sticky.js" async></script>
         <script src="shopping-cart-dropdown.js" async></script>
         <script src="shopping-cart.js" async></script>
@@ -41,7 +41,11 @@
         </nav>
         <section id="home-page-section">
             <article>
-                <form action="order.php" method="POST/GET">
+                <h2>Ostoskori:</h2>
+                <!-- Add shopping order -->
+
+                <h2>Omat tiedot:</h2>
+                <form name="customer" action="order.php" method="POST" autocomplete="off">
                     <label for="fname">Etunimi:</label><br>
                     <input type="text" id="fname" name="fname" required><br>
 
@@ -56,14 +60,15 @@
 
                     <!-- Check if same password on both input-->
                     <label for="pw">Salasana:</label><br>
-                    <input type="password" id="pw" name="pw" required><br>
+                    <input type="password" id="pw1" name="pw1" onblur="checkPasswords()" required><br>
                     <label for="pw">Salasana (uudestaan):</label><br>
-                    <input type="password" id="pw" name="pw" required><br>
+                    <input type="password" id="pw2" name="pw2" onblur="checkPasswords()" required>
+                    <p id="pwCheck"></p><br>
 
                     <label for="delivery">Toimitustapa:</label><br>
-                    <input type="radio" id="delivery1" name="delivery" value="Matkahuolto">
+                    <input type="radio" id="delivery1" name="delivery1" value="Matkahuolto">
                     <label for="delivery1">Matkahuolto</label>
-                    <input type="radio" id="delivery2" name="delivery" value="Nouto myymälästä">
+                    <input type="radio" id="delivery2" name="delivery2" value="Nouto myymälästä">
                     <label for="delivery2">Nouto myymälästä</label>
                     <br>
 

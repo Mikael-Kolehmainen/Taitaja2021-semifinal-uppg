@@ -41,6 +41,18 @@
         </nav>
         <section id="home-page-section">
             <article>
+                <h1>Kiitos tilauksesta!</h1>
+
+
+                <!-- Product information -->
+
+                
+                <p id="date"></p>
+                <script>
+                    n =  new Date();
+                    document.getElementById("date").innerHTML = n.getDate() + "." + (n.getMonth() + 1) + "." + n.getFullYear() + " " + n.getHours() + ":" + n.getMinutes();
+                </script>
+                <h2>Tietosi:</h2>
                 <?php
                     $servername = "localhost";
                     $username = "root";
@@ -53,16 +65,21 @@
                     if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                     }
-
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
   
-                        // collect value of input field
-                        $data = $_REQUEST['fname'];
-                      
-                        if (empty($data)) {
-                            echo "data is empty";
-                        } else {
-                            echo $data;
+                        $fname = $_REQUEST['fname'];
+                        $lname = $_REQUEST['lname'];
+                        $mail = $_REQUEST['e-mail'];
+                        $phone = $_REQUEST['phone'];
+                        $pw = $_REQUEST['pw1'];
+
+                        echo $fname." ".$lname."<br>";
+                        echo $mail."<br>";
+                        echo $phone."<br>";
+                        if (isset($_POST['delivery1'])) {
+                            echo "Toimitustapa: Matkahuolto";
+                        } else if (isset($_POST['delivery2'])) {
+                            echo "Nouto myymälästä";
                         }
                     }
 
