@@ -41,34 +41,33 @@
         </nav>
         <section id="home-page-section">
             <article>
-                <form action="order.php" method="POST/GET">
-                    <label for="fname">Etunimi:</label><br>
-                    <input type="text" id="fname" name="fname" required><br>
+                <?php
+                    $servername = "localhost";
+                    $username = "root";
+                    $password = "";
+                    $dbname = "asiakastietokanta";
 
-                    <label for="lname">Sukunimi:</label><br>
-                    <input type="text" id="lname" name="lname" required><br>
+                    // Create connection
+                    $conn = mysqli_connect($servername, $username, $password, $dbname);
+                    // Check connection
+                    if (!$conn) {
+                        die("Connection failed: " . mysqli_connect_error());
+                    }
 
-                    <label for="e-mail">Sähköposti:</label><br>
-                    <input type="text" id="e-mail" name="e-mail" required><br>
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  
+                        // collect value of input field
+                        $data = $_REQUEST['fname'];
+                      
+                        if (empty($data)) {
+                            echo "data is empty";
+                        } else {
+                            echo $data;
+                        }
+                    }
 
-                    <label for="phone">Puhelinnumero:</label><br>
-                    <input type="text" id="phone" name="phone" required><br>
-
-                    <!-- Check if same password on both input-->
-                    <label for="pw">Salasana:</label><br>
-                    <input type="password" id="pw" name="pw" required><br>
-                    <label for="pw">Salasana (uudestaan):</label><br>
-                    <input type="password" id="pw" name="pw" required><br>
-
-                    <label for="delivery">Toimitustapa:</label><br>
-                    <input type="radio" id="delivery1" name="delivery" value="Matkahuolto">
-                    <label for="delivery1">Matkahuolto</label>
-                    <input type="radio" id="delivery2" name="delivery" value="Nouto myymälästä">
-                    <label for="delivery2">Nouto myymälästä</label>
-                    <br>
-
-                    <input type="submit" value="Vahvista">
-                </form>
+                    mysqli_close($conn);
+                ?>
             </article>
         </section>
         <footer>
