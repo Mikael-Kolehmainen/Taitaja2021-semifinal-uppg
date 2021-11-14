@@ -29,8 +29,19 @@ function ready() {
 }
 
 function purchaseClicked() {
+    const itemImages = []
+    const itemTitles = []
+    const itemQty = []
+    const itemPrices = []
+    for (var i = 0; i < (document.getElementsByClassName('cart-row').length - 1); i++) {
+        itemImages.push(document.getElementsByClassName('cart-item-image')[i])
+        itemTitles.push(document.getElementsByClassName('cart-item-title')[i])
+        itemQty.push(document.getElementsByClassName('cart-quantity-input')[i])
+        itemPrices.push(document.getElementsByClassName('cart-item-price')[i])
+    }
+    console.log(itemImages, itemTitles, itemQty, itemPrices)
+    // Get the arrays to another file
     window.location.href = "form.php";
-    // Go to form page with asiakastiedot
 }
 
 function addToCartClicked(event) {

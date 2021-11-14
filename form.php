@@ -10,6 +10,7 @@
         <script src="sticky.js" async></script>
         <script src="shopping-cart-dropdown.js" async></script>
         <script src="shopping-cart.js" async></script>
+        <script src="items.js" async></script>
     </head>
     <body>
         <header>
@@ -43,6 +44,10 @@
             <article>
                 <h2>Ostoskori:</h2>
                 <!-- Add shopping order -->
+
+                <table id="orderedItems">
+
+                </table>
 
                 <h2>Omat tiedot:</h2>
                 <form name="customer" action="order.php" method="POST" autocomplete="off">
