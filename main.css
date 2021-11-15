@@ -442,3 +442,34 @@ input[type=number] {
 #pwCheck {
     display: inline;
 }
+#confirmation {
+    color: black;
+}
+#customer input {
+    margin-left: 5px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+.floating-label-group {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+.floating-label {
+    font-size: 15px;
+    color: #999999;
+    position: absolute;
+    pointer-events: none;
+    top: 14px;
+    left: 12px;
+    transition: all 0.1s ease;
+}
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label {
+    top: -21px;
+    bottom: 0px;
+    left: 0px;
+    font-size: 18px;
+    opacity: 1;
+    color: #404040;
+}

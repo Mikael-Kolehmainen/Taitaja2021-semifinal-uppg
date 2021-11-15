@@ -41,7 +41,7 @@
             </ul>
         </nav>
         <section id="home-page-section">
-            <article>
+            <article id="confirmation">
                 <h2>Ostoskori:</h2>
                 <!-- Add shopping order -->
 
@@ -50,24 +50,31 @@
                 </table>
 
                 <h2>Omat tiedot:</h2>
-                <form name="customer" action="order.php" method="POST" autocomplete="off">
-                    <label for="fname">Etunimi:</label><br>
-                    <input type="text" id="fname" name="fname" required><br>
-
-                    <label for="lname">Sukunimi:</label><br>
-                    <input type="text" id="lname" name="lname" required><br>
-
-                    <label for="e-mail">Sähköposti:</label><br>
-                    <input type="text" id="e-mail" name="e-mail" required><br>
-
-                    <label for="phone">Puhelinnumero:</label><br>
-                    <input type="text" id="phone" name="phone" required><br>
-
-                    <!-- Check if same password on both input-->
-                    <label for="pw">Salasana:</label><br>
-                    <input type="password" id="pw1" name="pw1" onblur="checkPasswords()" required><br>
-                    <label for="pw">Salasana (uudestaan):</label><br>
-                    <input type="password" id="pw2" name="pw2" onblur="checkPasswords()" required>
+                <form id="customer" name="customer" action="order.php" method="POST" autocomplete="off">
+                    <div class="floating-label-group">
+                        <input type="text" id="fname" name="fname" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Etunimi</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="lname" name="lname" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Sukunimi</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="e-mail" name="e-mail" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Sähköposti</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="phone" name="phone" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Puhelinnumero</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Salasana</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="pw2" name="pw2" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Salasana (uudestaan)</label>
+                    </div>
                     <p id="pwCheck"></p><br>
 
                     <label for="delivery">Toimitustapa:</label><br>
@@ -77,7 +84,7 @@
                     <label for="delivery2">Nouto myymälästä</label>
                     <br>
 
-                    <input type="submit" value="Vahvista">
+                    <input type="submit" value="Vahvista tilaus">
                 </form>
             </article>
         </section>
