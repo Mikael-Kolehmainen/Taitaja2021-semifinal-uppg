@@ -34,13 +34,12 @@ function purchaseClicked() {
     const itemQty = []
     const itemPrices = []
     for (var i = 0; i < (document.getElementsByClassName('cart-row').length - 1); i++) {
-        itemImages.push(document.getElementsByClassName('cart-item-image')[i])
-        itemTitles.push(document.getElementsByClassName('cart-item-title')[i])
-        itemQty.push(document.getElementsByClassName('cart-quantity-input')[i])
-        itemPrices.push(document.getElementsByClassName('cart-item-price')[i])
+        itemImages.push(document.getElementsByClassName('cart-item-image')[i].src)
+        itemTitles.push(document.getElementsByClassName('cart-item-title')[i].innerHTML)
+        itemQty.push(document.getElementsByClassName('cart-quantity-input')[i].value)
+        itemPrices.push(document.getElementsByClassName('cart-price')[i + 1].innerHTML)
     }
-    console.log(itemImages, itemTitles, itemQty, itemPrices)
-    // Get the arrays to another file
+    getItems(itemImages, itemTitles, itemQty, itemPrices)
     window.location.href = "form.php";
 }
 

@@ -10,6 +10,7 @@
         <script src="sticky.js" async></script>
         <script src="shopping-cart-dropdown.js" async></script>
         <script src="shopping-cart.js" async></script>
+        <script src="items.js" async></script>
     </head>
     <body>
         <header>

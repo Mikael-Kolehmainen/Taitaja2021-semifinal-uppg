@@ -12,7 +12,7 @@
         <script src="shopping-cart.js" async></script>
         <script src="items.js" async></script>
     </head>
-    <body>
+    <body onload="showItems();">
         <header>
             <img src="media/logo.jpg" alt="Company logo"></img>
         </header>
