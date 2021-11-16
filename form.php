@@ -68,12 +68,12 @@
                         <label class="floating-label">Puhelinnumero</label>
                     </div>
                     <div class="floating-label-group">
-                        <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" autofocus required />
+                        <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" autofocus required onblur="checkPasswords()"/>
                         <label class="floating-label">Salasana</label>
                     </div>
-                    <div class="floating-label-group">
-                        <input type="text" id="pw2" name="pw2" class="form-control" autocomplete="off" autofocus required />
-                        <label class="floating-label">Salasana (uudestaan)</label>
+                    <div class="floating-label-group" style="margin-bottom: 0px">
+                        <input type="password" id="pw2" name="pw2" class="form-control" autocomplete="off" autofocus required onblur="checkPasswords()"/>
+                        <label class="floating-label">Salasana (uudelleen)</label>
                     </div>
                     <p id="pwCheck"></p><br>
 
