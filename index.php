@@ -28,14 +28,14 @@
                             <span class="cart-quantity cart-header cart-column">MÄÄRÄ</span>
                             <span class="cart-price cart-header cart-column">HINTA</span>
                         </div>
-                        <div class="cart-items">
+                        <div class="cart-items" id="cart-items">
                             
                         </div>
                         <div class="cart-total">
                             <strong class="cart-total-title">Yhteensä</strong>
                             <span class="cart-total-price">0€</span>
                         </div>
-                        <button class="btn btn-primary btn-purchase" type="button">OSTA</button>
+                        <button class="btn btn-primary btn-purchase" type="button">OSTA <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button>
                     </div>
                 </div>  
             </ul>

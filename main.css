@@ -157,7 +157,13 @@ input[type=button] {
     margin-right: 10px;
 }
 .btn-danger {
-  font-size: 14px;
+    font-size: 14px;
+}
+.btn-purchase {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 5px;
 }
 @media (max-width: 1300px) {
     #cart {
@@ -432,7 +438,6 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 input[type=number] {
   -moz-appearance: textfield;
 }

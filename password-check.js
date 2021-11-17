@@ -1,8 +1,9 @@
 function checkPasswords() {
     var pwcheck = document.getElementById('pwCheck');
 
-    var pw1 = document.forms["customer"]["floating-label-group"]["pw1"].value;
-    var pw2 = document.forms["customer"]["floating-label-group"]["pw2"].value;
+    var pw1 = document.getElementById('pw1').value;
+    var pw2 = document.getElementById('pw2').value;
+    console.log(pw1)
 
     if (pw1 == pw2) {
         pwcheck.innerText = "Salasana on OK!";

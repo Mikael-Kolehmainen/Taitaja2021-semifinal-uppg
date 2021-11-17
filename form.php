@@ -28,14 +28,14 @@
                             <span class="cart-quantity cart-header cart-column">MÄÄRÄ</span>
                             <span class="cart-price cart-header cart-column">HINTA</span>
                         </div>
-                        <div class="cart-items">
+                        <div class="cart-items" id="cart-items">
                             
                         </div>
                         <div class="cart-total">
                             <strong class="cart-total-title">Yhteensä</strong>
                             <span class="cart-total-price">0€</span>
                         </div>
-                        <button class="btn btn-primary btn-purchase" type="button">OSTA</button>
+                        <button class="btn btn-primary btn-purchase" type="button">OSTA <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button>
                     </div>
                 </div>  
             </ul>
@@ -78,9 +78,9 @@
                     <p id="pwCheck"></p><br>
 
                     <label for="delivery">Toimitustapa:</label><br>
-                    <input type="radio" id="delivery1" name="delivery1" value="Matkahuolto">
+                    <input type="radio" id="delivery1" name="delivery" value="Matkahuolto">
                     <label for="delivery1">Matkahuolto</label>
-                    <input type="radio" id="delivery2" name="delivery2" value="Nouto myymälästä">
+                    <input type="radio" id="delivery2" name="delivery" value="Nouto myymälästä">
                     <label for="delivery2">Nouto myymälästä</label>
                     <br>
 

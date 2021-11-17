@@ -1,21 +1,25 @@
 
 function dropdownfunction() {
-    document.getElementById("mydropdown").classList.toggle("show");
-    document.getElementById("shopping-cart-btn").style.margin = '0 0 0 90%';
+    dropdownBtn = document.getElementById('shopping-cart-btn')
+    document.getElementById("mydropdown").classList.toggle("show")
+    if (document.getElementById('cart-items').childElementCount >= 1) {
+        dropdownBtn.style.margin = '0 0 0 90%'
+    } else {
+        dropdownBtn.style.margin = '0 0 0 80%'
+    }
     if (document.getElementById("mydropdown").classList.contains('show') == false) {
-        document.getElementById("shopping-cart-btn").style.removeProperty("margin");
+        dropdownBtn.style.removeProperty("margin")
     }
 }
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn') && event.target.matches('.shopping-cart')) {
-        console.log("Test");
-        var dropdowns = document.getElementsByClassName("shopping-cart-content");
-        var i;
+        var dropdowns = document.getElementsByClassName("shopping-cart-content")
+        var i
         for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
+            var openDropdown = dropdowns[i]
             if (openDropdown.classList.contains('show')) {
-                document.getElementById("shopping-cart-btn").style.removeProperty("margin");
-                openDropdown.classList.remove('show');
+                dropdownBtn.style.removeProperty("margin")
+                openDropdown.classList.remove('show')
             }
         }
     }
