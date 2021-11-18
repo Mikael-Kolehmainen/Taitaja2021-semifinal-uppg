@@ -39,7 +39,7 @@ function purchaseClicked() {
         itemQty.push(document.getElementsByClassName('cart-quantity-input')[i].value)
         itemPrices.push(document.getElementsByClassName('cart-price')[i + 1].innerHTML)
     }
-    getItems(itemImages, itemTitles, itemQty, itemPrices)
+    setItems(itemImages, itemTitles, itemQty, itemPrices)
     window.location.href = "form.php";
 }
 

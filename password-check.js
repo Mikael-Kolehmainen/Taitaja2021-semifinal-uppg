@@ -3,7 +3,6 @@ function checkPasswords() {
 
     var pw1 = document.getElementById('pw1').value;
     var pw2 = document.getElementById('pw2').value;
-    console.log(pw1)
 
     if (pw1 == pw2) {
         pwcheck.innerText = "Salasana on OK!";
