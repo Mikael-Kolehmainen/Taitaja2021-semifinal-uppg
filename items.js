@@ -11,39 +11,28 @@ function showItems() {
     itemPrices = window.localStorage.getItem('prices')
 
     if (itemImages.length > 0) {
-        for (i = 0; itemImages.length >= i; i++) {
+        for (i = 0; 1 >= i; i++) {
             // document.write
-            echo "<tr class='shop-item'>";
-            for(i = 1; i <= 2; i++) {
-                echo "<td>";
-                switch($i) {
+            document.getElementById('orderedItems').appendChild(document.createTextNode("<tr class=shop-item"))
+            for (j = 1; j <= 2; j++) {
+                document.append("<td>")
+                switch(i) {
                     case 1:
-                        $image = $row['kuva'];
-                        echo "<img src='$image' class='shop-item-image'>";
+                        document.append("<img src=" + itemImages[j] + " class='shop-item-image'>")
                         break;
                     case 2:
-                        echo "<div id='product' class='shop-item-title'>".$row["merkki"]."</div>";
-                        echo "<ul id='desc'>";
-                            echo "<li>".$row["koko"]."</li>";
-                            if ($row["tyyppi"] == 0) {
-                                echo "<li>Kesärengas</li>";
-                            } else {
-                                echo "<li>Nastarengas</li>";
-                            }
-                        echo "</ul>";
-                        echo "<div id='price' class='shop-item-price'>".$row["hinta"]." €/kpl"."</div><br><br>";
-                        echo "<button id='cart' class='shop-item-button'/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
-                        echo "</ul>";
+                        document.append("<div id='product' class='shop-item-title'>" + itemTitles[j] + "</div>")
+                        document.append("<div id='price' class='shop-item-price'>" + itemPrices[j] + " €/kpl" + "</div><br><br>")
+                        document.append("Kpl: " + itemQty[j])
                         break;
                 }
-                echo "</td>";
+                document.append("</td>")
             }
-            echo "</tr>";
+            document.append("</tr>")
         }
     } else {
-        echo "Empty";
+        document.append("Empty")
     }
-
     console.log(itemImages)
     console.log(itemTitles)
     console.log(itemQty)

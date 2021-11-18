@@ -46,7 +46,7 @@
                 <!-- Add shopping order -->
 
                 <table id="orderedItems">
-
+                    
                 </table>
 
                 <h2>Omat tiedot:</h2>
