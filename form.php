@@ -43,11 +43,10 @@
         <section id="home-page-section">
             <article id="confirmation">
                 <h2>Ostoskori:</h2>
-                <!-- Add shopping order -->
-
-                <table id="orderedItems">
+                <table id="valikoima">
                     
                 </table>
+                <p id="total"></p>
 
                 <h2>Omat tiedot:</h2>
                 <form id="customer" name="customer" action="order.php" method="POST" autocomplete="off">

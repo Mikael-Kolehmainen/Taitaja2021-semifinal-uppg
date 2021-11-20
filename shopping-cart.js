@@ -33,13 +33,15 @@ function purchaseClicked() {
     const itemTitles = []
     const itemQty = []
     const itemPrices = []
+    var itemTotal = ""
     for (var i = 0; i < (document.getElementsByClassName('cart-row').length - 1); i++) {
         itemImages.push(document.getElementsByClassName('cart-item-image')[i].src)
-        itemTitles.push(document.getElementsByClassName('cart-item-title')[i].innerHTML)
+        itemTitles.push(document.getElementsByClassName('cart-item-title')[i].innerText)
         itemQty.push(document.getElementsByClassName('cart-quantity-input')[i].value)
-        itemPrices.push(document.getElementsByClassName('cart-price')[i + 1].innerHTML)
+        itemPrices.push(document.getElementsByClassName('cart-price')[i + 1].innerText)
     }
-    setItems(itemImages, itemTitles, itemQty, itemPrices)
+    itemTotal = document.getElementsByClassName('cart-total-price')[0].innerText
+    setItems(itemImages, itemTitles, itemQty, itemPrices, itemTotal)
     window.location.href = "form.php";
 }
 
