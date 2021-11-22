@@ -41,18 +41,21 @@
         </nav>
         <section id="home-page-section">
             <article>
-                <h1>Kiitos tilauksesta!</h1>
-
-
-                <!-- Product information -->
-
-                
+                <h1>Kiitos tilauksesta!</h1>                
                 <p id="date"></p>
                 <script>
                     n =  new Date();
                     document.getElementById("date").innerHTML = n.getDate() + "." + (n.getMonth() + 1) + "." + n.getFullYear() + " " + n.getHours() + ":" + n.getMinutes();
                 </script>
-                <h2>Tietosi:</h2>
+
+                <!-- Tuotteen tiedot -->
+                <!-- Toimitustapa -->
+                <!-- Asiakastiedot -->
+                    <!--Nimi -->
+                    <!-- Osoite -->
+                    <!-- Sähköposti -->
+                    <!-- Puhelinnumero -->
+
                 <?php
                     $servername = "localhost";
                     $username = "root";
@@ -76,11 +79,9 @@
                         echo $fname." ".$lname."<br>";
                         echo $mail."<br>";
                         echo $phone."<br>";
-                        if (isset($_POST['delivery1'])) {
-                            echo "Toimitustapa: Matkahuolto";
-                        } else if (isset($_POST['delivery2'])) {
-                            echo "Nouto myymälästä";
-                        }
+                        if (isset($_POST['delivery'])) {
+                            echo "Toimitustapa: ".$_POST['delivery'];
+                        }                        
                     }
 
                     mysqli_close($conn);
