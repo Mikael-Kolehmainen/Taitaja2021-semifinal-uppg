@@ -68,6 +68,14 @@
                         <label class="floating-label">Puhelinnumero</label>
                     </div>
                     <div class="floating-label-group">
+                        <input type="text" id="postnumber" name="postnumber" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Postinumero</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="address" name="address" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Postiosoite</label>
+                    </div>
+                    <div class="floating-label-group">
                         <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" autofocus required onblur="checkPasswords()"/>
                         <label class="floating-label">Salasana</label>
                     </div>
@@ -76,7 +84,6 @@
                         <label class="floating-label">Salasana (uudelleen)</label>
                     </div>
                     <p id="pwCheck"></p><br>
-
                     <label for="delivery">Toimitustapa:</label><br>
                     <input type="radio" id="delivery1" name="delivery" value="Matkahuolto">
                     <label for="delivery1">Matkahuolto</label>

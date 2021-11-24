@@ -75,12 +75,15 @@
                         $lname = $_REQUEST['lname'];
                         $mail = $_REQUEST['e-mail'];
                         $phone = $_REQUEST['phone'];
+                        $postnum = $_REQUEST['postnumber'];
+                        $postaddress = $_REQUEST['postaddress'];
                         $pw = $_REQUEST['pw1'];
 
                         if (isset($_POST['delivery'])) {
                             echo "Toimitustapa: ".$_POST['delivery']."<br>";
                         }    
                         echo $fname." ".$lname."<br>";
+                        echo $postaddress." ".$postnum."<br>";
                         echo $mail."<br>";
                         echo $phone."<br>";            
                     }
