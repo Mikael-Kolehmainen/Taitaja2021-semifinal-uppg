@@ -76,7 +76,7 @@
                         $mail = $_REQUEST['e-mail'];
                         $phone = $_REQUEST['phone'];
                         $postnum = $_REQUEST['postnumber'];
-                        $postaddress = $_REQUEST['postaddress'];
+                        $postaddress = $_REQUEST['address'];
                         $pw = $_REQUEST['pw1'];
 
                         if (isset($_POST['delivery'])) {
