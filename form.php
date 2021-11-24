@@ -48,6 +48,7 @@
                 </table>
                 <p id="total"></p>
 
+                <!-- lisää postiosoite ja postinumero -->
                 <h2>Omat tiedot:</h2>
                 <form id="customer" name="customer" action="order.php" method="POST" autocomplete="off">
                     <div class="floating-label-group">
@@ -83,7 +84,7 @@
                     <label for="delivery2">Nouto myymälästä</label>
                     <br>
 
-                    <input type="submit" value="Vahvista tilaus">
+                    <input id="vahvistus" type="submit" value="Vahvista tilaus">
                 </form>
             </article>
         </section>

@@ -10,8 +10,9 @@
         <script src="sticky.js" async></script>
         <script src="shopping-cart-dropdown.js" async></script>
         <script src="shopping-cart.js" async></script>
+        <script src="items.js" async></script>
     </head>
-    <body>
+    <body onload="showItems()">
         <header>
             <img src="media/logo.jpg" alt="Company logo"></img>
         </header>
@@ -49,12 +50,10 @@
                 </script>
 
                 <!-- Tuotteen tiedot -->
-                <!-- Toimitustapa -->
-                <!-- Asiakastiedot -->
-                    <!--Nimi -->
-                    <!-- Osoite -->
-                    <!-- Sähköposti -->
-                    <!-- Puhelinnumero -->
+                <table id="valikoima">
+                    
+                </table>
+                <p id="total"></p>
 
                 <?php
                     $servername = "localhost";
@@ -69,19 +68,21 @@
                         die("Connection failed: " . mysqli_connect_error());
                     }
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
+
+                        // TODO: send information to db
+
                         $fname = $_REQUEST['fname'];
                         $lname = $_REQUEST['lname'];
                         $mail = $_REQUEST['e-mail'];
                         $phone = $_REQUEST['phone'];
                         $pw = $_REQUEST['pw1'];
 
+                        if (isset($_POST['delivery'])) {
+                            echo "Toimitustapa: ".$_POST['delivery']."<br>";
+                        }    
                         echo $fname." ".$lname."<br>";
                         echo $mail."<br>";
-                        echo $phone."<br>";
-                        if (isset($_POST['delivery'])) {
-                            echo "Toimitustapa: ".$_POST['delivery'];
-                        }                        
+                        echo $phone."<br>";            
                     }
 
                     mysqli_close($conn);
