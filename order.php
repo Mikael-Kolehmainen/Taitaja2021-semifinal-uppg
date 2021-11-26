@@ -69,8 +69,6 @@
                     }
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-                        // TODO: send information to db
-
                         $fname = $_REQUEST['fname'];
                         $lname = $_REQUEST['lname'];
                         $mail = $_REQUEST['e-mail'];
@@ -79,13 +77,24 @@
                         $postaddress = $_REQUEST['address'];
                         $pw = $_REQUEST['pw1'];
 
+                        $sql = "INSERT INTO asiakaat (etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana)
+                                VALUES ('$fname', '$lname', '$postaddress', '$postnum', '$phone', '$mail', '$pw')";
+                        
+                        mysqli_query($conn, $sql);
+
+                       /* if (mysqli_query($conn, $sql)) {
+                            echo "New record created successfully";
+                        } else {
+                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                        }*/
+
                         if (isset($_POST['delivery'])) {
                             echo "Toimitustapa: ".$_POST['delivery']."<br>";
                         }    
                         echo $fname." ".$lname."<br>";
-                        echo $postaddress." ".$postnum."<br>";
+                        echo $postaddress.", ".$postnum."<br>";
                         echo $mail."<br>";
-                        echo $phone."<br>";            
+                        echo $phone."<br>";
                     }
 
                     mysqli_close($conn);
