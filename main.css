@@ -120,11 +120,17 @@ nav .active {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-#price {
+#price, #stock {
     font-size: 20px;
     color: black;
     margin-left: 10px;
     float: right;
+}
+#qty {
+    margin-left: 10px;
+}
+.clearfix {
+    clear:both;
 }
 #product {
     font-size: 20px;
@@ -443,7 +449,11 @@ input[type=number] {
 }
 
 
-
+#total {
+    margin-left: 45%;
+    font-size: 20px;
+    font-weight: bold;
+}
 #pwCheck {
     display: inline;
 }

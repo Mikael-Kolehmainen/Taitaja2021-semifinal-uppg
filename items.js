@@ -45,7 +45,9 @@ function showItems() {
             cell.appendChild(shopItemPrice)
 
             var shopItemQty = document.createElement('div')
-            shopItemQty.innerText = "Kpl: " + itemQty[j]
+            shopItemQty.id = 'qty'
+            shopItemQty.className = 'shop-item-qty'
+            shopItemQty.innerText = "Kappaletta: " + itemQty[j]
 
             cell.appendChild(shopItemQty)
         }

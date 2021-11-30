@@ -132,7 +132,8 @@
                                                         echo "<li>Nastarengas</li>";
                                                     }
                                                 echo "</ul>";
-                                                echo "<div id='stock' class='shop-item-stock'>"."Varastossa: ".$row["kappale"]."</div>";
+                                                echo "<div id='stock' class='shop-item-stock'>"."Varastossa: ".$row["kappale"]." kappaletta</div><br>";
+                                                echo "<div class='clearfix'></div>";
                                                 echo "<div id='price' class='shop-item-price'>".$row["hinta"]." €/kpl"."</div><br><br>";
                                                 echo "<button id='cart' class='shop-item-button'/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
                                                 echo "</ul>";
