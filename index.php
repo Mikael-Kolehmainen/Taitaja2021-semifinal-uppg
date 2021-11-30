@@ -108,37 +108,40 @@
                         if (!$conn) {
                             die("Connection failed: " . mysqli_connect_error());
                         }
-                        $sql = "SELECT kuva, merkki, koko, hinta, tyyppi FROM renkaat";
+                        $sql = "SELECT kuva, merkki, koko, hinta, tyyppi, kappale FROM renkaat";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
                             while($row = mysqli_fetch_assoc($result)) {
-                                echo "<tr class='shop-item'>";
-                                for($i = 1; $i <= 2; $i++) {
-                                    echo "<td>";
-                                    switch($i) {
-                                        case 1:
-                                            $image = $row['kuva'];
-                                            echo "<img src='$image' class='shop-item-image'>";
-                                            break;
-                                        case 2:
-                                            echo "<div id='product' class='shop-item-title'>".$row["merkki"]."</div>";
-                                            echo "<ul id='desc'>";
-                                                echo "<li>".$row["koko"]."</li>";
-                                                if ($row["tyyppi"] == 0) {
-                                                    echo "<li>Kesärengas</li>";
-                                                } else {
-                                                    echo "<li>Nastarengas</li>";
-                                                }
-                                            echo "</ul>";
-                                            echo "<div id='price' class='shop-item-price'>".$row["hinta"]." €/kpl"."</div><br><br>";
-                                            echo "<button id='cart' class='shop-item-button'/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
-                                            echo "</ul>";
-                                            break;
+                                if ($row["kappale"] > 0) {
+                                    echo "<tr class='shop-item'>";
+                                    for($i = 1; $i <= 2; $i++) {
+                                        echo "<td>";
+                                        switch($i) {
+                                            case 1:
+                                                $image = $row['kuva'];
+                                                echo "<img src='$image' class='shop-item-image'>";
+                                                break;
+                                            case 2:
+                                                echo "<div id='product' class='shop-item-title'>".$row["merkki"]."</div>";
+                                                echo "<ul id='desc'>";
+                                                    echo "<li>".$row["koko"]."</li>";
+                                                    if ($row["tyyppi"] == 0) {
+                                                        echo "<li>Kesärengas</li>";
+                                                    } else {
+                                                        echo "<li>Nastarengas</li>";
+                                                    }
+                                                echo "</ul>";
+                                                echo "<div id='stock' class='shop-item-stock'>"."Varastossa: ".$row["kappale"]."</div>";
+                                                echo "<div id='price' class='shop-item-price'>".$row["hinta"]." €/kpl"."</div><br><br>";
+                                                echo "<button id='cart' class='shop-item-button'/>Lisää ostoskoriin <i class='cart-icon fas fa-shopping-cart fa-lg'></i></button";
+                                                echo "</ul>";
+                                                break;
+                                        }
+                                        echo "</td>";
                                     }
-                                    echo "</td>";
+                                    echo "</tr>";
                                 }
-                                echo "</tr>";
                             }
                         } else {
                             echo "0 results";
