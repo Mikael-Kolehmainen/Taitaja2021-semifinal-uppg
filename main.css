@@ -183,6 +183,7 @@ input[type=button] {
     }
     .shopping-cart-content {
       min-width: 500px;
+      max-height: 150px;
     }
     .btn-danger {
       font-size: 10px;
@@ -231,19 +232,19 @@ input[type=button] {
       min-width: 50%;
       height: 100px;
     }
-    #product {
-      font-size: 16px;
-    }
     #sorting, #searchsize {
       float: left;
       margin-bottom: 5px;
     }
-    .text {
+    .text, #stock, #price, #product {
       font-size: 16px;
     }
     .cart-quantity-input {
       width: 100%;
-  }
+    }
+    .shopping-cart-content {
+      max-height: 150px;
+    }
 }
 
 /* Slideshow */
