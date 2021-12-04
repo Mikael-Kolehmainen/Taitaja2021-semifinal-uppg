@@ -77,6 +77,8 @@
                         $postaddress = $_REQUEST['address'];
                         $pw = $_REQUEST['pw1'];
 
+                        $pw = password_hash($pw, PASSWORD_ARGON2I);
+
                         $sql = "INSERT INTO asiakaat (etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana)
                                 VALUES ('$fname', '$lname', '$postaddress', '$postnum', '$phone', '$mail', '$pw')";
                         
