@@ -49,7 +49,50 @@
                 <p id="total"></p>
 
                 <h2>Omat tiedot:</h2>
-                <p><a href="sign-in.php">Kirjaudu sisään</a> tai <a href="sign-up.php">Luo tili</a></p>
+                <form id="customer" name="customer" action="order.php" method="POST" autocomplete="off">
+                    <input type="hidden" name="new-customer" value=""/>
+                    <div class="floating-label-group">
+                        <input type="text" id="fname" name="fname" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Etunimi</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="lname" name="lname" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Sukunimi</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="e-mail" name="e-mail" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Sähköposti</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="phone" name="phone" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Puhelinnumero</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="postnumber" name="postnumber" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Postinumero</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="text" id="address" name="address" class="form-control" autocomplete="off" autofocus required />
+                        <label class="floating-label">Postiosoite</label>
+                    </div>
+                    <div class="floating-label-group">
+                        <input type="password" id="pw1" name="pw1" class="form-control" autocomplete="off" autofocus required onblur="checkPasswords()"/>
+                        <label class="floating-label">Salasana</label>
+                    </div>
+                    <div class="floating-label-group" style="margin-bottom: 0px">
+                        <input type="password" id="pw2" name="pw2" class="form-control" autocomplete="off" autofocus required onblur="checkPasswords()"/>
+                        <label class="floating-label">Salasana (uudelleen)</label>
+                    </div>
+                    <p id="pwCheck"></p><br>
+                    <label for="delivery">Toimitustapa:</label><br>
+                    <input type="radio" id="delivery1" name="delivery" value="Matkahuolto">
+                    <label for="delivery1">Matkahuolto</label>
+                    <input type="radio" id="delivery2" name="delivery" value="Nouto myymälästä">
+                    <label for="delivery2">Nouto myymälästä</label>
+                    <br>
+
+                    <input id="vahvistus" type="submit" value="Vahvista tilaus">
+                </form>
             </article>
         </section>
         <footer>

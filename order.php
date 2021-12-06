@@ -67,7 +67,7 @@
                     if (!$conn) {
                         die("Connection failed: " . mysqli_connect_error());
                     }
-                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new-customer'])) {
 
                         $fname = $_REQUEST['fname'];
                         $lname = $_REQUEST['lname'];
@@ -97,8 +97,33 @@
                         echo $postaddress.", ".$postnum."<br>";
                         echo $mail."<br>";
                         echo $phone."<br>";
-                    }
+                    } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['old-customer'])) {
+                        $sql = "SELECT id, etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana FROM asiakaat";
+                        $result = mysqli_query($conn, $sql);
 
+                        $mail = $_REQUEST['e-mail'];
+                        $pw = $_REQUEST['pw1'];
+                        if (isset($_POST['delivery'])) {
+                            echo "Toimitustapa: ".$_POST['delivery']."<br>";
+                        }
+                        if (mysqli_num_rows($result) > 0) {
+                            for ($i = 0; $i < mysqli_num_rows($result); $i++) {
+                                $row = mysqli_fetch_assoc($result);
+                                if ($mail == $row['eposti'] && password_verify($pw, $row['salasana'])) {
+                                    
+                                    // Debugging
+                                    echo $row['id']."<br>";
+
+                                    echo $row['etunimi']." ".$row['sukunimi']."<br>";
+                                    echo $row['osoite'].", ".$row['postinumero']."<br>";
+                                    echo $row['eposti']."<br>";
+                                    echo $row['puhelinnumero']."<br>";
+                                } else if ($mail == $row['eposti']) {
+                                    // Password was wrong
+                                }
+                            }
+                        }
+                    }
                     mysqli_close($conn);
                 ?>
             </article>
