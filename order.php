@@ -81,6 +81,8 @@
 
                         $sql = "INSERT INTO asiakaat (etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana)
                                 VALUES ('$fname', '$lname', '$postaddress', '$postnum', '$phone', '$mail', '$pw')";
+
+                        $amountOfWrongPws = 0;
                         
                         mysqli_query($conn, $sql);
 
@@ -109,7 +111,7 @@
                         if (mysqli_num_rows($result) > 0) {
                             for ($i = 0; $i < mysqli_num_rows($result); $i++) {
                                 $row = mysqli_fetch_assoc($result);
-                                if ($mail == $row['eposti'] && password_verify($pw, $row['salasana'])) {
+                                if ($mail == $row['eposti'] && password_verify($pw, $row['salasana']) == 1) {
                                     
                                     // Debugging
                                     echo $row['id']."<br>";
@@ -118,8 +120,18 @@
                                     echo $row['osoite'].", ".$row['postinumero']."<br>";
                                     echo $row['eposti']."<br>";
                                     echo $row['puhelinnumero']."<br>";
-                                } else if ($mail == $row['eposti']) {
+                                } else if ($mail == $row['eposti'] && password_verify($pw, $row['salasana']) == 0) {
                                     // Password was wrong
+                                    echo "<script>
+                                            alert('Salasana on väärä.');
+                                            window.location.href = 'sign-in.php';
+                                            </script>";
+                                } else if ($mail != $row['eposti']) {
+                                    // Email was wrong
+                                    // Amount of wrong passwords == number of rows then email was wrong
+                                    if () {
+
+                                    }
                                 }
                             }
                         }
