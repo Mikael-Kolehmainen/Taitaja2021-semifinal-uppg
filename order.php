@@ -56,6 +56,8 @@
                 <p id="total"></p>
 
                 <?php
+                    $amountOfWrongPws = 0;
+                    $mailAlreadyInDb = false;
                     $servername = "localhost";
                     $username = "root";
                     $password = "";
@@ -69,36 +71,46 @@
                     }
                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['new-customer'])) {
 
-                        $fname = $_REQUEST['fname'];
-                        $lname = $_REQUEST['lname'];
+                        $dbmails = "SELECT eposti FROM asiakaat";
+                        $result = mysqli_query($conn, $dbmails);
+
                         $mail = $_REQUEST['e-mail'];
-                        $phone = $_REQUEST['phone'];
-                        $postnum = $_REQUEST['postnumber'];
-                        $postaddress = $_REQUEST['address'];
-                        $pw = $_REQUEST['pw1'];
 
-                        $pw = password_hash($pw, PASSWORD_DEFAULT);
+                        if (mysqli_num_rows($result) > 0) {
+                            for ($i = 0; $i < mysqli_num_rows($result); $i++) {
+                                $row = mysqli_fetch_assoc($result);
+                                if ($mail == $row['eposti']) {
+                                    $mailAlreadyInDb = true;
+                                    echo "<script>
+                                            alert('Sähköposti löytyy jo tietokannasta, testaa kirjautua sisään.');
+                                            window.location.href = 'sign-in.php';
+                                            </script>";
+                                }
+                            }
+                        }
+                        if ($mailAlreadyInDb == false) {
+                            $fname = $_REQUEST['fname'];
+                            $lname = $_REQUEST['lname'];
+                            $phone = $_REQUEST['phone'];
+                            $postnum = $_REQUEST['postnumber'];
+                            $postaddress = $_REQUEST['address'];
+                            $pw = $_REQUEST['pw1'];
 
-                        $sql = "INSERT INTO asiakaat (etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana)
-                                VALUES ('$fname', '$lname', '$postaddress', '$postnum', '$phone', '$mail', '$pw')";
+                            $pw = password_hash($pw, PASSWORD_DEFAULT);
 
-                        $amountOfWrongPws = 0;
-                        
-                        mysqli_query($conn, $sql);
+                            $sql = "INSERT INTO asiakaat (etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana)
+                                    VALUES ('$fname', '$lname', '$postaddress', '$postnum', '$phone', '$mail', '$pw')";
+                            
+                            mysqli_query($conn, $sql);
 
-                       /* if (mysqli_query($conn, $sql)) {
-                            echo "New record created successfully";
-                        } else {
-                            echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-                        }*/
-
-                        if (isset($_POST['delivery'])) {
-                            echo "Toimitustapa: ".$_POST['delivery']."<br>";
-                        }    
-                        echo $fname." ".$lname."<br>";
-                        echo $postaddress.", ".$postnum."<br>";
-                        echo $mail."<br>";
-                        echo $phone."<br>";
+                            if (isset($_POST['delivery'])) {
+                                echo "Toimitustapa: ".$_POST['delivery']."<br>";
+                            }    
+                            echo $fname." ".$lname."<br>";
+                            echo $postaddress.", ".$postnum."<br>";
+                            echo $mail."<br>";
+                            echo $phone."<br>";
+                        }
                     } else if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['old-customer'])) {
                         $sql = "SELECT id, etunimi, sukunimi, osoite, postinumero, puhelinnumero, eposti, salasana FROM asiakaat";
                         $result = mysqli_query($conn, $sql);
@@ -128,9 +140,13 @@
                                             </script>";
                                 } else if ($mail != $row['eposti']) {
                                     // Email was wrong
+                                    $amountOfWrongPws = $amountOfWrongPws + 1;
                                     // Amount of wrong passwords == number of rows then email was wrong
-                                    if () {
-
+                                    if ($amountOfWrongPws == mysqli_num_rows($result)) {
+                                        echo "<script>
+                                            alert('Sähköpostia ei löydy tietokannasta.');
+                                            window.location.href = 'sign-in.php';
+                                            </script>";
                                     }
                                 }
                             }
