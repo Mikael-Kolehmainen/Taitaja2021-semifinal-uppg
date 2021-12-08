@@ -141,7 +141,7 @@
                                 } else if ($mail != $row['eposti']) {
                                     // Email was wrong
                                     $amountOfWrongPws = $amountOfWrongPws + 1;
-                                    // Amount of wrong passwords == number of rows then email was wrong
+                                    // Amount of wrong passwords == number of rows, then email was wrong
                                     if ($amountOfWrongPws == mysqli_num_rows($result)) {
                                         echo "<script>
                                             alert('Sähköpostia ei löydy tietokannasta.');
