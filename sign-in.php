@@ -49,6 +49,7 @@
                 <p id="total"></p>
 
                 <h2>Omat tiedot:</h2>
+                <a href="form.php" id="back">Takaisin</a>
                 <form id="customer" name="customer" action="order.php" method="POST" autocomplete="off">
                     <input type="hidden" name="old-customer" value=""/>
                     <div class="floating-label-group">
